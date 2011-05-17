@@ -11808,3 +11808,116 @@ Processing StaffController#login (for 127.0.0.1 at 2011-05-17 10:33:46) [GET]
 Rendering template within layouts/staff
 Rendering staff/login
 Completed in 8ms (View: 6, DB: 0) | 200 OK [http://localhost/staff/login]
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options. (called from /Users/samir/Sites/simple_blog/app/controllers/application_controller.rb:6)
+
+
+Processing StaffController#login (for 127.0.0.1 at 2011-05-17 10:35:25) [GET]
+Rendering template within layouts/staff
+Rendering staff/login
+Completed in 14ms (View: 12, DB: 0) | 200 OK [http://localhost/staff/login]
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options. (called from /Users/samir/Sites/simple_blog/app/controllers/application_controller.rb:6)
+
+
+Processing StaffController#login (for 127.0.0.1 at 2011-05-17 10:35:27) [GET]
+Rendering template within layouts/staff
+Rendering staff/login
+Completed in 4ms (View: 2, DB: 0) | 200 OK [http://localhost/staff/login]
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options. (called from /Users/samir/Sites/simple_blog/app/controllers/application_controller.rb:6)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-05-17 10:35:36) [GET]
+
+ActionController::RoutingError (No route matches "/m" with {:method=>:get}):
+  /Users/samir/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /Users/samir/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /Users/samir/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /Users/samir/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /Users/samir/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /Users/samir/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /Users/samir/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /Users/samir/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /Users/samir/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /Users/samir/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options. (called from /Users/samir/Sites/simple_blog/app/controllers/application_controller.rb:6)
+
+
+Processing MainController#index (for 127.0.0.1 at 2011-05-17 10:35:36) [GET]
+  [4;36;1mCategory Load (0.7ms)[0m   [0;1mSELECT * FROM "categories" ORDER BY name ASC[0m
+  [4;35;1mPost Load (0.9ms)[0m   [0mSELECT * FROM "posts" WHERE (status = 'published') ORDER BY created_at DESC[0m
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE (status = 'published') ORDER BY posts.created_at DESC[0m
+Rendering template within layouts/application
+Rendering main/list
+Rendered custom/_about (0.6ms)
+Rendered shared/_categories (0.6ms)
+Rendered shared/_archive_list (0.6ms)
+Rendered shared/_right_column (14.8ms)
+
+ActionView::TemplateError (private method `now' called for Date:Class) on line #28 of app/views/layouts/application.rhtml:
+25: <%= yield %>
+26: </div>
+27: <div id="footer">
+28:   <p>Copyright <%= Date.now.year %>, Pixel &amp; Press, Inc.</p>
+29: </div>
+30: </body>
+31: </html>
+
+    app/views/layouts/application.rhtml:28:in `_run_rhtml_app47views47layouts47application46rhtml'
+    app/controllers/main_controller.rb:6:in `index'
+    /Users/samir/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /Users/samir/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /Users/samir/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /Users/samir/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /Users/samir/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /Users/samir/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /Users/samir/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /Users/samir/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /Users/samir/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /Users/samir/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (138.1ms)
+Rendered rescues/_request_and_response (1.2ms)
+Rendering rescues/layout (internal_server_error)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options. (called from /Users/samir/Sites/simple_blog/app/controllers/application_controller.rb:6)
+
+
+Processing MainController#index (for 127.0.0.1 at 2011-05-17 10:35:42) [GET]
+  [4;35;1mCategory Load (0.6ms)[0m   [0mSELECT * FROM "categories" ORDER BY name ASC[0m
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE (status = 'published') ORDER BY created_at DESC[0m
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE (status = 'published') ORDER BY posts.created_at DESC[0m
+Rendering template within layouts/application
+Rendering main/list
+Rendered custom/_about (0.1ms)
+Rendered shared/_categories (0.1ms)
+Rendered shared/_archive_list (0.1ms)
+Rendered shared/_right_column (1.3ms)
+Completed in 19ms (View: 8, DB: 1) | 200 OK [http://localhost/main]
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options. (called from /Users/samir/Sites/simple_blog/app/controllers/application_controller.rb:6)
+
+
+Processing PostsController#index (for 127.0.0.1 at 2011-05-17 10:36:46) [GET]
+Redirected to http://localhost:3000/staff/login
+Filter chain halted as [:authorize_access] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://localhost/posts]
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options. (called from /Users/samir/Sites/simple_blog/app/controllers/application_controller.rb:6)
+
+
+Processing StaffController#login (for 127.0.0.1 at 2011-05-17 10:36:46) [GET]
+Rendering template within layouts/staff
+Rendering staff/login
+Completed in 8ms (View: 6, DB: 0) | 200 OK [http://localhost/staff/login]
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options. (called from /Users/samir/Sites/simple_blog/app/controllers/application_controller.rb:6)
+
+
+Processing PostsController#index (for 127.0.0.1 at 2011-05-17 10:36:46) [GET]
+Redirected to http://localhost:3000/staff/login
+Filter chain halted as [:authorize_access] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://localhost/posts]
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options. (called from /Users/samir/Sites/simple_blog/app/controllers/application_controller.rb:6)
+
+
+Processing StaffController#login (for 127.0.0.1 at 2011-05-17 10:36:46) [GET]
+Rendering template within layouts/staff
+Rendering staff/login
+Completed in 4ms (View: 3, DB: 0) | 200 OK [http://localhost/staff/login]

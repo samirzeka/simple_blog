@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 	<title>Simple Blog: <%= @page_title ||= 'Staff Arrea' %></title>
-	<meta name="copyright" content="Copyright 2007, Pixel and Press, Inc." />
+	<meta name="copyright" content="Copyright 2011, Pixel and Press, Inc." />
 	<meta name="version" content="1.0" />
 	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
 	<%= stylesheet_link_tag('sblog', 'staff', :media => "all") %>
@@ -18,6 +18,6 @@
 <%= yield %>
 </div>
 <div id="footer">
-<p>Copyright 2007, Pixel &amp; Press, Inc.</p>
+  <p>Copyright <%= DateTime.now.year %>, Pixel &amp; Press, Inc.</p>
 </div>
 </body>
