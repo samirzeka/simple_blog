@@ -11,18 +11,6 @@
 
 ActiveRecord::Schema.define(:version => 9) do
 
-  create_table "blog_posts", :force => true do |t|
-    t.string   "title",          :limit => 100, :default => "", :null => false
-    t.text     "content",                       :default => "", :null => false
-    t.integer  "author_id",      :limit => 100, :default => 0,  :null => false
-    t.string   "status",         :limit => 20,  :default => "", :null => false
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "comments_count", :limit => 4,   :default => 0,  :null => false
-  end
-
-  add_index "blog_posts", ["author_id"], :name => "index_blog_posts_on_author_id"
-
   create_table "categories", :force => true do |t|
     t.string "name",        :limit => 50, :default => "", :null => false
     t.string "short_name",  :limit => 30, :default => "", :null => false
@@ -45,6 +33,18 @@ ActiveRecord::Schema.define(:version => 9) do
     t.string   "status",       :limit => 25, :default => "", :null => false
     t.datetime "created_at"
   end
+
+  create_table "posts", :force => true do |t|
+    t.string   "title",          :limit => 100, :default => "", :null => false
+    t.text     "content",                       :default => "", :null => false
+    t.integer  "author_id",                     :default => 0,  :null => false
+    t.string   "status",         :limit => 20,  :default => "", :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "comments_count", :limit => 4,   :default => 0,  :null => false
+  end
+
+  add_index "posts", ["author_id"], :name => "index_posts_on_author_id"
 
   create_table "sessions", :force => true do |t|
     t.string   "session_id"

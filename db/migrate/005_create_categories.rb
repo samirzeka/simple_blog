@@ -13,12 +13,12 @@ class CreateCategories < ActiveRecord::Migration
     end
     add_index :categories_posts, :category_id
     add_index :categories_posts, :post_id
-    remove_column :blog_posts, :category
+    remove_column :posts, :category
   end
 
   def self.down
     drop_table :categories
     drop_table :categories_posts
-    add_column :blog_posts, :category, :string, :limit => 20, :default => "", :null => false
+    add_column :posts, :category, :string, :limit => 20, :default => "", :null => false
   end
 end

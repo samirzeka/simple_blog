@@ -7,12 +7,12 @@ class MainController < ApplicationController
   end
 
   def list
-  @posts = Post.find(:all, :include => [:author, :categories], :conditions => "status = 'published'", :order => 'blog_posts.created_at DESC')
+  @posts = Post.find(:all, :include => [:author, :categories], :conditions => "status = 'published'", :order => 'posts.created_at DESC')
 	
   end
 
   def category
-    @posts = Post.find(:all, :include => [:author, :categories], :conditions => ["status = 'published' AND categories.id = ?", params[:id]], :order => "blog_posts.created_at DESC")
+    @posts = Post.find(:all, :include => [:author, :categories], :conditions => ["status = 'published' AND categories.id = ?", params[:id]], :order => "posts.created_at DESC")
     render(:action => 'list')
   end
 
@@ -23,8 +23,8 @@ class MainController < ApplicationController
 		end_time = start_time.next_month
 		@posts = Post.find(:all, 
 			:include => [:author, :categories],
-			:conditions => ["status = 'published' AND blog_posts.created_at BETWEEN ? AND ?", start_time, end_time], 
-			:order => "blog_posts.created_at DESC")
+			:conditions => ["status = 'published' AND posts.created_at BETWEEN ? AND ?", start_time, end_time], 
+			:order => "posts.created_at DESC")
 		render(:action => 'list')
 
   end
