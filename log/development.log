@@ -11374,3 +11374,49 @@ Migrating to AddPasswordSalt (9)
   [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_sessions_on_updated_at')[0m
   [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_sessions_on_session_id')[0m
   [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("users")[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options. (called from /Users/samir/Sites/simple_blog/app/controllers/application_controller.rb:6)
+
+
+Processing MainController#index (for 127.0.0.1 at 2011-05-17 09:54:28) [GET]
+  [4;36;1mCategory Load (0.7ms)[0m   [0;1mSELECT * FROM "categories" ORDER BY name ASC[0m
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "blog_posts" WHERE (status = 'published') ORDER BY created_at DESC[0m
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "blog_posts" WHERE (status = 'published') ORDER BY blog_posts.created_at DESC[0m
+Rendering template within layouts/application
+Rendering main/list
+Rendered custom/_about (0.6ms)
+Rendered shared/_categories (0.7ms)
+Rendered shared/_archive_list (0.6ms)
+Rendered shared/_right_column (86.6ms)
+Completed in 124ms (View: 104, DB: 1) | 200 OK [http://localhost/]
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options. (called from /Users/samir/Sites/simple_blog/app/controllers/application_controller.rb:6)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-05-17 09:55:20) [GET]
+
+ActionController::RoutingError (No route matches "/p" with {:method=>:get}):
+  /Users/samir/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /Users/samir/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /Users/samir/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /Users/samir/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /Users/samir/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /Users/samir/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /Users/samir/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /Users/samir/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /Users/samir/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /Users/samir/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options. (called from /Users/samir/Sites/simple_blog/app/controllers/application_controller.rb:6)
+
+
+Processing PostsController#index (for 127.0.0.1 at 2011-05-17 09:55:20) [GET]
+Redirected to http://localhost:3000/staff/login
+Filter chain halted as [:authorize_access] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://localhost/posts]
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options. (called from /Users/samir/Sites/simple_blog/app/controllers/application_controller.rb:6)
+
+
+Processing StaffController#login (for 127.0.0.1 at 2011-05-17 09:55:20) [GET]
+Rendering template within layouts/staff
+Rendering staff/login
+Completed in 12ms (View: 10, DB: 0) | 200 OK [http://localhost/staff/login]
