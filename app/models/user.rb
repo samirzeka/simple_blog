@@ -35,7 +35,6 @@ class User < ActiveRecord::Base
   end
 
   def self.authenticate(username = "", password = "")
-
     user = self.find(:first, :conditions => ["username = ?", username])
     return (user && user.authenticated?(password)) ? user : nil
   end

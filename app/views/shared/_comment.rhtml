@@ -1,7 +1,7 @@
 <div class="comment">
-	<div class="comment-lead">On <%= strip_zeros_from_date(comment.created_at.strftime("%B *%d, %Y")) %>,
-	<%= h(comment.author) %> wrote:</div>
-	<div class="comment-text">
-	<%= prepare_post_body(comment.content) %>
-	</div>
-	</div>
+  <div class="comment-lead">On <%= strip_zeros_from_date(comment.created_at.strftime("%B *%d, %Y")) %>,
+    <%= h(comment.author) %> wrote:</div>
+  <div class="comment-text">
+    <%= prepare_post_body(comment.content) %>
+  </div>
+</div>

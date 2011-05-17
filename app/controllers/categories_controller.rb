@@ -1,7 +1,7 @@
 class CategoriesController < ApplicationController
-	layout "staff"
+  layout "staff"
 
-	before_filter :authorize_access
+  before_filter :authorize_access
 
   def index
     list
@@ -10,7 +10,7 @@ class CategoriesController < ApplicationController
 
   # GETs should be safe (see http://www.w3.org/2001/tag/doc/whenToUseGet.html)
   verify :method => :post, :only => [ :destroy, :create, :update ],
-         :redirect_to => { :action => :list }
+    :redirect_to => { :action => :list }
 
   def list
     #@category_pages, @categories = paginate :categories, :per_page => 10
@@ -18,10 +18,6 @@ class CategoriesController < ApplicationController
     @category = Category.find(params[:id]) if params[:id]
     @category = Category.new if @category.nil?
   end
-
-
-
-
 
   def create
     @category = Category.new(params[:category])
@@ -32,8 +28,6 @@ class CategoriesController < ApplicationController
       render :action => 'list'
     end
   end
-
-
 
   def update
     @category = Category.find(params[:id])

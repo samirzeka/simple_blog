@@ -1,36 +1,38 @@
 <%= error_messages_for(:post) %>
 
 <table>
-	<tr>
-		<th>Title</td>
-		<td><%= text_field(:post, :title, :size => 40, :style => "font-size: 1.5em;") %></td>
-		<td rowspan="2">
-			<div class="categorylist">
-				<h2>Categories:</h2>
-				<ul>
-					<% @all_categories.each do |cat| -%>
-						<li><%= check_box_tag('categories[]', cat.id, @post.categories.map {|c| c.id }.include?(cat.id)) %>
-							<%= cat.name %></li>
-					<% end -%>
-				</ul>
-			</div>
-		</td>
-	</tr>
-	<tr>
-		<th>Post Body</th>
-		<td><%= text_area(:post, :content, :cols => 70, :rows => 20, :style => "font-size: 1.1em;") %></td>
-	</tr>
-	<tr>
-		<th>Author</th>
-		<td><%= select(:post, :author_id, @user_list) %></td>
-	</tr>
-	<tr>
-		<th>Status</th>
-		<td><%= select(:post, :status, ['draft', 'published']) %></td>
-	</tr>
-	<tr>
-		<th>Created At</th>
-		<td><%= datetime_select(:post, :created_at, :order => [:month, :day, :year], 
-					:start_year => 2007, :end_year => Time.now.next_year.year) %></td>
-	</tr>
+  <tr>
+    <th>Title</td>
+    <td><%= text_field(:post, :title, :size => 40, :style => "font-size: 1.5em;") %></td>
+    <td rowspan="2">
+      <div class="categorylist">
+        <h2>Categories:</h2>
+        <ul>
+          <% @all_categories.each do |cat| -%>
+            <li><%= check_box_tag('categories[]', cat.id, @post.categories.map {|c| c.id }.include?(cat.id)) %>
+              <%= cat.name %></li>
+          <% end -%>
+        </ul>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <th>Post Body</th>
+    <td><%= text_area(:post, :content, :cols => 70, :rows => 20, :style => "font-size: 1.1em;") %></td>
+  </tr>
+  <tr>
+    <th>Author</th>
+    <td><%= select(:post, :author_id, @user_list) %></td>
+  </tr>
+  <tr>
+    <th>Status</th>
+    <td><%= select(:post, :status, ['draft', 'published']) %></td>
+  </tr>
+  <tr>
+    <th>Created At</th>
+    <td>
+      <%= datetime_select(:post, :created_at, :order => [:month, :day, :year], 
+      :start_year => 2007, :end_year => Time.now.next_year.year) %>
+    </td>
+  </tr>
 </table>

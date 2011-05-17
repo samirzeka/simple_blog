@@ -3,8 +3,8 @@
 <%= content_tag('p', link_to('&laquo; Back', :action => 'list')) %>
 
 <% form_tag(:action => 'update', :id => @post) do -%>
-<%= render(:partial => 'form') -%>
-<%= submit_tag("Edit", :style => "margin: 1.5em 0 0 100px;") %>
+  <%= render(:partial => 'form') -%>
+  <%= submit_tag("Edit", :style => "margin: 1.5em 0 0 100px;") %>
 <% end -%>
 
 <%= link_to('Preview Post', {:action => 'show', :id => @post}, :target => "_blank") %>
