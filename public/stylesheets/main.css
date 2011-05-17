@@ -1,0 +1,21 @@
+#left-column { float: left; width: 730px; margin: 2em 1em; }
+#right-column { float: right; width: 180px; margin: 2em 1em; }
+
+.post, .comments { margin: 1em; padding-bottom: 1em; border-bottom: 1px dashed #004080; }
+.post .title{ font-size: 1.2em; font-weight: bold; }
+.post .author { font-size: .8em; }
+.post .date { font-size: .8em; }
+.post .body { margin: 1em 0; }
+.post .categories { font-size: .8em; }
+.post .comment-summary { font-size: .8em; }
+
+.comment .comment-lead { font-size: .8em; }
+.comment .comment-text { margin-top: 1em; margin-left: 1em;}
+.comment-form { margin: 1em; }
+
+.about { font-size: .8em; color: #004080; padding-top: 1em; }
+
+#categories, #archive-list { font-size: .8em; color: #004080; }
+#categories h4, #archive-list h4 { margin-bottom: 0; }
+#categories ul, #archive-list ul { margin: .5em 0; padding-left: 0; list-style: none; }
+

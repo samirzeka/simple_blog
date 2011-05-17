@@ -1,0 +1,15 @@
+<div id="left-column">
+	<div id="posts">
+		<%# @posts.each do |post| -%>
+		
+			<%# render(:partial => 'shared/post', :locals => {:post => post}) %>
+		<%# end %>
+			<%= render(:partial => 'shared/post', :collection => @posts ) %>
+			<%= 'There are no posts that match your selection.' if @posts.empty? %>
+	</div>
+</div>
+				
+<div id="right-column">
+	<%= render(:partial => 'shared/right_column')%>
+</div>
+				

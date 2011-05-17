@@ -1,0 +1,14 @@
+<div class="post">
+   <div class="title"><%= link_to(h(post.title), :action => 'view_post', :id => post.id) %></div>
+      <div class="byline">
+			<span class="author">by <%= h(post.author.display_name) %></span>
+			<span class="date">on <%= strip_zeros_from_date(post.created_at.strftime("%B *%d, %Y")) %> (<%= use_relative_time(post.created_at) %>)</span>
+      </div>
+   <div class="body"><%= prepare_post_body(post.content) %></div>
+   
+   <div class="other-info">
+			<span class="categories">Posted in <%= post.categories.collect {|cat| cat.name }.to_sentence %></span>
+			<span class="comment-summary"><%= link_to(pluralize(post.approved_comments.size, 'comment'), :action => 'view_post', :id => post.id, :anchor => 'comments') %></span> 
+   
+   </div>
+</div>

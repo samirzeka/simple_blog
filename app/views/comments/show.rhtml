@@ -1,0 +1,19 @@
+<%= content_tag('p', link_to('&laquo; Back', :action => 'list')) %>
+
+<table>
+	<tr>
+		<th>Author:</th><td><%= h(@comment.author) %></td>
+	</tr>
+	<tr>
+		<th>Email:</th><td><%= h(@comment.author_email) %></td>
+	</tr>
+	<tr>
+		<th>Status:</th><td><%= h(@comment.status) %></td>
+	</tr>
+	<tr>
+		<th>Created:</th><td><%= @comment.created_at.strftime('%m/%d/%y at %I:%m %p') %></td>
+	</tr>
+	<tr>
+		<th>Comment:</th><td><%= h(@comment.content) %></td>
+	</tr>
+</table>
