@@ -11,7 +11,7 @@ class PostsController < ApplicationController
          :redirect_to => { :action => :list }
 
   def list
-    @post_pages, @posts = paginate :posts, :per_page => 10
+    @posts = Post.paginate :per_page => 10, :page => params[:page]
   end
 
   def show

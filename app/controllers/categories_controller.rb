@@ -13,15 +13,15 @@ class CategoriesController < ApplicationController
          :redirect_to => { :action => :list }
 
   def list
-    @category_pages, @categories = paginate :categories, :per_page => 10
-	@category = Category.find(params[:id]) if params[:id]
-	@category = Category.new if @category.nil?
-	
+    #@category_pages, @categories = paginate :categories, :per_page => 10
+    @categories = Category.paginate :per_page => 10, :page => params[:page]
+    @category = Category.find(params[:id]) if params[:id]
+    @category = Category.new if @category.nil?
   end
 
-  
 
-  
+
+
 
   def create
     @category = Category.new(params[:category])
@@ -33,7 +33,7 @@ class CategoriesController < ApplicationController
     end
   end
 
-  
+
 
   def update
     @category = Category.find(params[:id])

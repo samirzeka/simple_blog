@@ -12,7 +12,7 @@ class UsersController < ApplicationController
          :redirect_to => { :action => :list }
 
   def list
-    @user_pages, @users = paginate :users, :per_page => 10
+    @users = User.paginate :per_page => 10, :page => params[:page]
   end
 
 

@@ -27,9 +27,7 @@
 
 </table>
 
-<%= link_to 'Previous page', { :page => post_pages.current.previous } if @post_pages.current.previous %>
-<%= link_to 'Next page', { :page => @post_pages.current.next } if 
-@post_pages.current.next %>
+<%= will_paginate @posts %>
 <br />
 <%= link_to 'New post', :action => 'new' %>
 
