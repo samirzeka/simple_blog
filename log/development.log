@@ -11921,3 +11921,31 @@ Processing StaffController#login (for 127.0.0.1 at 2011-05-17 10:36:46) [GET]
 Rendering template within layouts/staff
 Rendering staff/login
 Completed in 4ms (View: 3, DB: 0) | 200 OK [http://localhost/staff/login]
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options. (called from /Users/samir/Sites/simple_blog/app/controllers/application_controller.rb:6)
+
+
+Processing MainController#index (for 127.0.0.1 at 2011-05-17 10:45:22) [GET]
+  [4;36;1mCategory Load (0.7ms)[0m   [0;1mSELECT * FROM "categories" ORDER BY name ASC[0m
+  [4;35;1mPost Load (0.3ms)[0m   [0mSELECT * FROM "posts" WHERE (status = 'published') ORDER BY created_at DESC[0m
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE (status = 'published') ORDER BY posts.created_at DESC[0m
+Rendering template within layouts/application
+Rendering main/list
+Rendered custom/_about (0.5ms)
+Rendered shared/_categories (0.6ms)
+Rendered shared/_archive_list (0.6ms)
+Rendered shared/_right_column (13.5ms)
+Completed in 114ms (View: 101, DB: 1) | 200 OK [http://localhost/]
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options. (called from /Users/samir/Sites/simple_blog/app/controllers/application_controller.rb:6)
+
+
+Processing MainController#index (for 127.0.0.1 at 2011-05-17 10:46:18) [GET]
+  [4;35;1mCategory Load (0.6ms)[0m   [0mSELECT * FROM "categories" ORDER BY name ASC[0m
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE (status = 'published') ORDER BY created_at DESC[0m
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE (status = 'published') ORDER BY posts.created_at DESC[0m
+Rendering template within layouts/application
+Rendering main/list
+Rendered custom/_about (0.1ms)
+Rendered shared/_categories (0.1ms)
+Rendered shared/_archive_list (0.1ms)
+Rendered shared/_right_column (1.3ms)
+Completed in 18ms (View: 8, DB: 1) | 200 OK [http://localhost/]
