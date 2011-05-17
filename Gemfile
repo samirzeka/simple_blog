@@ -1,3 +1,4 @@
 source 'http://rubygems.org'
 
-gem "pg"
+gem "rails", "2.3.11"
+gem "mysql2"
