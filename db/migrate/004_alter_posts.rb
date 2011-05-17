@@ -3,8 +3,7 @@ class AlterPosts < ActiveRecord::Migration
     add_column :posts, :updated_at, :datetime
     rename_table :posts, :blog_posts
     rename_column :blog_posts, :body, :content
-    change_column :blog_posts, :author, :integer, :default => 0, :null => false
-    rename_column :blog_posts, :author, :author_id
+    change_column :blog_posts, :author_id, :integer, :default => 0, :null => false
     add_index :blog_posts, :author_id
   end
 
